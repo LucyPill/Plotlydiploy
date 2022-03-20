@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <!--cdn for bootsrap styling-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center text-white" style="background-image: linear-gradient(to left,rgba(150, 209, 233, 0.747), rgba(113, 195, 233, 0.74)) ">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    
+    <div class="container" >
+      <div class = "row">
+        <div class = "col-md-12">
+            <h2 class ="bold" style="color:rgb(40, 56, 202)"> From Bacteria to Beef </h2>
+            <p>Many bacterial especies are not well known, and many remain unknown to science. Our task is to discover and document these bacteria.
+              We are interested in bacteria especies that have the ability to synthezise proteins that taste like beef. We have have partnered with "Improbable Beef",
+              a food startup to research candidate especies.<br></p>
+              <p>Many labs have been succesful in synthesizing meat from algae, fungi, and microorganisms found in plantroots; However, Improbable Beef
+                is still searching for the elusive bacteria that will provide the perfect taste. Our belief is that there is a microorganism that can supply the best next taste
+                and it can be found in bacteria that live in the human body.</p>
+
+                <h3 class ="bold" style="color:rgb(40, 56, 202)">Select your participant ID number: </h3>
+            <p>To learn about the different bacteria that live in your belly button select ypur ID number from the dropdown menu.
+               These charts will give you information about the top 10 bacteria found in your belly button, how frequent a sample was collected, and
+              the number of cultures that each sample produce. </p>
+            <br>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <!-- well div with dropdown header and menu-->
+        <div class="well">
+          <h5 style="color: rgb(40, 56, 202)">Test Subject ID No.:</h5>
+          <!-- dropdown menu that calls the optionChanged function
+          The arguement for the optionChanged function is this.value... 
+          aka current value of drop down menu selection-->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        
+        <!--panel division-element has a header and the sample info-->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title" style="color: rgb(40, 56, 202)">Demographic Info</h3>
+          </div>
+          <!--informion panel stores sample meta data-->
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      
+      <div class="col-md-5">
+        <div id="bar"></div>
+      </div>
+      
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
